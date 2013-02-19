@@ -1,3 +1,9 @@
+=======
+test-cozy
+=========
+
+test for cozy
+
 # Description
 
 Cozy Template is a template project to start quickly your own application. Just
@@ -22,3 +28,4 @@ efficiently your data while protecting your privacy without technical skills.
 
 More informations and hosting services on:
 http://cozycloud.cc
+
