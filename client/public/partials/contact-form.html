@@ -1,0 +1,10 @@
+
+<div class="page-header">
+  <h1>{{Contact.selected.name}}</h1>
+</div>
+<form id="contact-details" class="form-horizontal"> 
+  <div ng-repeat="data in Contact.selected.datas" class="control-group">
+    <label class="control-label"> {{data.name}}</label>
+    <input type="text" ng-model="data.value"/>
+  </div>
+</form>

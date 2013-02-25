@@ -1,0 +1,10 @@
+ul#contact-list.thumbnails
+  li.span2(ng-repeat="contact in Contact.list | filter:query")
+    .thumbnail(ng-click="contact.select()")
+      h4 {{contact.name}}
+      img(src="http://placehold.it/200")
+
+  li.span2
+    .thumbnail(ng-click="makeNewContact()")
+      img(src="http://placehold.it/200/55FF55/000000&text=new")
+      h4 Create

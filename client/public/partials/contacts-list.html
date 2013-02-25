@@ -1,0 +1,13 @@
+
+<ul id="contact-list" class="thumbnails">
+  <li ng-repeat="contact in Contact.list | filter:query" class="span2">
+    <div ng-click="contact.select()" class="thumbnail">
+      <h4>{{contact.name}}</h4><img src="http://placehold.it/200"/>
+    </div>
+  </li>
+  <li class="span2">
+    <div ng-click="makeNewContact()" class="thumbnail"><img src="http://placehold.it/200/55FF55/000000&amp;text=new"/>
+      <h4>Create</h4>
+    </div>
+  </li>
+</ul>
