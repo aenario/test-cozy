@@ -36,44 +36,17 @@ angular.module('app.filters', []);
 */
 
 angular.module('app.services', ['ngResource']).factory('Contact', function($resource) {
-  var Contact, ContactDataEntry;
+  var Contact;
   Contact = $resource('contacts/:id', {
     'id': '@id'
   });
-  ContactDataEntry = (function() {
-
-    function ContactDataEntry(type, name, value, _default) {
-      this.type = type;
-      this.name = name;
-      this.value = value;
-      this["default"] = _default;
-    }
-
-    ContactDataEntry.prototype.isMail = function() {
-      return this.type === 'email';
-    };
-
-    ContactDataEntry.prototype.isPhone = function() {
-      return this.type === 'phone';
-    };
-
-    ContactDataEntry.prototype.isOther = function() {
-      return !this.isMail() && !this.isPhone();
-    };
-
-    return ContactDataEntry;
-
-  })();
   Contact.selected = null;
   Contact.list = [];
-  Contact.prototype.datas = [];
   Contact.prototype.prepareDatas = function() {
     contact.datas.map(function(dataEntry) {
       return new ContactDataEntry(dataEntry);
     });
-    this.phones = contact.datas.filter;
-    this.mails;
-    return this.others;
+    return this.phones = contact.datas.filter;
   };
   Contact.load = function() {
     return Contact.list = Contact.query(function() {

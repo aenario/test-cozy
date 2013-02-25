@@ -6,13 +6,12 @@ angular.module('app.services', ['ngResource'])
 
 .factory 'Contact', ($resource) ->
 
-  MANAGED_TYPES = 
-  	'email':'Email', 
-  	'phone':'Phone Number'
-
+  #MANAGED_TYPES =
+  #  'email':'Email'
+  #  'phone':'Phone Number'
 
   Contact = $resource 'contacts/:id', 'id':'@id'
-  Contact.MANAGED_TYPES = MANAGED_TYPES
+  #Contact.MANAGED_TYPES = MANAGED_TYPES
 
   Contact.selected = null
   Contact.list = []
@@ -21,8 +20,6 @@ angular.module('app.services', ['ngResource'])
     contact.datas.map (dataEntry) ->
       new ContactDataEntry(dataEntry)
     @phones = contact.datas.filter
-    @mails 
-    @others
 
   Contact.load = ->
     Contact.list = Contact.query ->
@@ -44,7 +41,6 @@ angular.module('app.services', ['ngResource'])
   
   Contact.prototype.havePhone = ->
     Contact.datas.some (data) -> data.isPhone()
-
 
   Contact.load()
 
