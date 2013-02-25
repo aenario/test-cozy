@@ -10,5 +10,5 @@ Contact = define 'Contact', ->
     property 'birthday', Date
     property 'Job', String
     property 'Company', String
-    property 'Notes', Schema.Text
+    property 'Notes', String
     property 'datas', [ContactDataEntry]
