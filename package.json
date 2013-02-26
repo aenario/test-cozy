@@ -1,10 +1,10 @@
 {
-  "name": "cozy-test-app",
+  "name": "cozy-contacts",
   "version": "0.0.1",
   "engines": [
     "node = 0.8.x"
   ],
-  "description": "A template project for cozy applications",
+  "description": "A minimalist cozy applications",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -12,14 +12,7 @@
   },
   "main": "server.coffee",
   "dependencies": {
-    "jade": "= 0.27.6",
-    "jade-ext": "= 0.0.5",
     "express": "= 3.0.0",
-    "connect": "= 2.6.1",
-    "railway": "= 1.0.1",
-    "coffee-script": "= 1.4.0",
-    "mime": "= 1.2.7",
-    "qs": "= 0.5.0",
     "jugglingdb": "= 0.1.24-pre2",
     "jugglingdb-cozy-adapter": ">= 0"
   },

@@ -13,8 +13,8 @@ angular.module('app.controllers', [])
   $scope.Contact = Contact
 
   $scope.makeNewContact = ->
-    new Contact(
+    nc = new Contact
       "name":"New Contact"
-      ).select()
+    nc.select()
 
 ])

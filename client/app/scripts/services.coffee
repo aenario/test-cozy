@@ -16,32 +16,30 @@ angular.module('app.services', ['ngResource'])
   Contact.selected = null
   Contact.list = []
 
+  thenUpdate = ->
+    Contact.list = Contact.query ->
+      Contact.list.forEach (contact) -> contact.prepareDatas
+
   Contact.prototype.prepareDatas = ->
     contact.datas.map (dataEntry) ->
       new ContactDataEntry(dataEntry)
     @phones = contact.datas.filter
 
-  Contact.load = ->
-    Contact.list = Contact.query ->
-      Contact.list.forEach (contact) -> contact.prepareDatas
-
   Contact.prototype.save = ->
-    Contact.prototype.$save ->
-      Contact.load()
+    Contact.prototype.$save thenUpdate
 
   Contact.prototype.delete = ->
-    Contact.prototype.$delete ->
-      Contact.load()
+    Contact.prototype.$delete thenUpdate
 
   Contact.prototype.select = ->
     Contact.selected = @
 
   Contact.prototype.haveMail = ->
-    Contact.datas.some (data) -> data.isMail()
+    Contact.datas.some (data) -> data.type == 'email'
   
   Contact.prototype.havePhone = ->
-    Contact.datas.some (data) -> data.isPhone()
+    Contact.datas.some (data) -> data.type == 'phone'
 
-  Contact.load()
+  thenUpdate()
 
   return Contact

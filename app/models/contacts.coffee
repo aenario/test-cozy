@@ -1,1 +1,0 @@
-Contact.all = (callback) -> Contact.request "all", callback
